@@ -21,4 +21,4 @@ wordpress_sites:
     cache:
       enabled: false
     env:
-      domain_current_site: manage.matgargano.net
+      domain_current_site: manage.matgargano.com
