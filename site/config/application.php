@@ -125,7 +125,7 @@ $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 if ( file_exists( $env_config ) ) {
     require_once $env_config;
 }
-
+error_log('123');
 Config::apply();
 
 /**
