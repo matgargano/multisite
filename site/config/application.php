@@ -71,6 +71,8 @@ if (env('DATABASE_URL')) {
     Config::define('DB_PASSWORD', isset($dsn->pass) ? $dsn->pass : null);
     Config::define('DB_HOST', isset($dsn->port) ? "{$dsn->host}:{$dsn->port}" : $dsn->host);
 }
+Config:define('COOKIE_DOMAIN', $_SERVER['HTTP_HOST']);
+
 
 /**
  * Authentication Unique Keys and Salts
@@ -114,18 +116,6 @@ $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
 if (file_exists($env_config)) {
     require_once $env_config;
 }
-
-Config::define('WP_ALLOW_MULTISITE', true);
-Config::define('MULTISITE', true);
-Config::define('SUBDOMAIN_INSTALL', true); // Set to true if using subdomains
-Config::define('DOMAIN_CURRENT_SITE', env('DOMAIN_CURRENT_SITE'));
-Config::define('PATH_CURRENT_SITE', env('PATH_CURRENT_SITE') ?: '/');
-Config::define('SITE_ID_CURRENT_SITE', env('SITE_ID_CURRENT_SITE') ?: 1);
-Config::define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
-Config::define('ADMIN_COOKIE_PATH', '/');
-Config::define('COOKIE_DOMAIN', $_SERVER['HTTP_HOST']);
-Config::define('COOKIEPATH', '');
-Config::define('SITECOOKIEPATH', '');
 
 Config::apply();
 
