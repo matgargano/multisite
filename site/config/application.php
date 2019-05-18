@@ -76,7 +76,9 @@ if ( array_key_exists( 'HTTP_HOST', $_SERVER ) ) {
     error_log( 'exists' );
 }
 
-
+Config::define('WP_ALLOW_MULTISITE', true);
+Config::define('MULTISITE', true);
+Config::define('SUBDOMAIN_INSTALL', true); // Set to true if using subdomains
 /**
  * Authentication Unique Keys and Salts
  */
