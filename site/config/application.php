@@ -123,7 +123,7 @@ Config::define('PATH_CURRENT_SITE', env('PATH_CURRENT_SITE') ?: '/');
 Config::define('SITE_ID_CURRENT_SITE', env('SITE_ID_CURRENT_SITE') ?: 1);
 Config::define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
 Config::define('ADMIN_COOKIE_PATH', '/');
-Config::define('COOKIE_DOMAIN', '');
+Config::define('COOKIE_DOMAIN', $_SERVER['HTTP_HOST']);
 Config::define('COOKIEPATH', '');
 Config::define('SITECOOKIEPATH', '');
 
